@@ -27,6 +27,9 @@ def split_conversations(output_dir):
 
     for idx, conv in enumerate(conversations, start=1):
         raw_name = conv.get('name', f'conversation_{idx}')
+        # If the name is blank (empty string or only whitespace), rename it Untitled
+        if not str(raw_name).strip():
+            raw_name = "Untitled"
         safe_name = sanitize_filename(str(raw_name))
         fname = f"{idx:03d}_{safe_name}.json"
         out_path = os.path.join(output_dir, fname.strip())
