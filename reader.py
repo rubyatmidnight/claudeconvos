@@ -314,7 +314,7 @@ def display_main_menu(index, page=0, page_size=12, search_results=None, search_q
         print(f"{str(idx).rjust(3)}. {color_lavender(name)}")
         print(f"     {color_pale_green(fname)}")
     print(f"\nPage {page+1}/{num_pages}")
-    print("Enter conversation number to open, next page [r], prev page [e], [f]ind, [o]ptions, or 'p' to quit.")
+    print("Enter conversation number to open, prev page [e], next page [r], [f]ind, [o]ptions, or 'p' to quit.")
 
 def main_menu_loop(index):
     page = 0
