@@ -1,12 +1,17 @@
-# Requirements:
+## Requirements:
+python
 none
 an ansi-capable terminal for colored text is recommended 
+
+## just want to test it?
+if you run `py reader.py` even before building the indexed folder, it will open `test.json`, which is included as an example. 
+
 
 # Instructions:
 
 clone this repo
 
-create two folders, claude_convos/source and claude_convos/convos
+create two folders, `claude_convos/source` and `claude_convos/convos`
 
 place your Anthropic data export conversations.json as-is into the /source folder (which can be requested here: https://claude.ai/settings/data-privacy-controls)
     - You can move the other two files or delete them, they are not used or needed, and contain PII

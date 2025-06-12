@@ -3,7 +3,9 @@ import json
 import os
 import difflib
 
-# ANSI color codes for lavender (foreground)
+
+# version: 1.0
+
 LAVENDER = "\033[38;2;181;126;220m"
 SKY_BLUE = "\033[38;2;135;206;235m"
 PALE_GREEN = "\033[38;2;152;251;152m"
@@ -45,7 +47,6 @@ def is_truncated(text, max_lines=15):
     lines = text.strip().splitlines()
     return len(lines) > max_lines
 
-# Settings for sender display names
 SETTINGS = {
     "assistant_display": "Assistant",
     "human_display": "User"
@@ -83,7 +84,6 @@ def settings_menu():
             input()
 
 def get_display_sender(sender):
-    # Map sender to display name using settings
     if sender.lower() == "assistant":
         return SETTINGS["assistant_display"]
     elif sender.lower() == "human":
@@ -98,7 +98,6 @@ def display_message(msg, idx, total, focused=False, unfurled=False):
     is_assistant = sender.lower() == "assistant"
     is_human = sender.lower() == "human"
     header = f"\n[{idx+1}/{total}] {display_sender}:"
-    # Determine if this message is truncated
     truncated = is_truncated(text)
     if is_assistant:
         print(color_sky_blue(header))
@@ -119,7 +118,6 @@ def display_message(msg, idx, total, focused=False, unfurled=False):
         else:
             print(short_text(text))
     else:
-        # For any other sender, print as is
         print(header)
         if focused and truncated and not unfurled:
             print(short_text(text))
